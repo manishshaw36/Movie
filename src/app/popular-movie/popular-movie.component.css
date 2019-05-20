@@ -1,0 +1,27 @@
+.popular-movies-container {
+    height: 100vh;
+    overflow-y: scroll;
+}
+.footer-text {
+    padding: 10px 0;
+    margin: 0 20px;
+    background-color: rgba(0, 0, 0, 0.18);
+}
+#lessBtn, #greaterBtn {
+    font-weight: 900;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+} 
+#lessBtn {
+    margin-left: 50px;
+}
+.disabled {
+    color: gray;
+}
+#lessBtn.disabled:hover, #greaterBtn.disabled:hover {
+    color: gray;
+}
+#lessBtn:hover, #greaterBtn:hover{
+    color:yellow;
+}
