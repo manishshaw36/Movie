@@ -16,7 +16,7 @@ export class PopularMovieComponent implements OnInit {
   page = 1;
   totalPage = 1;
 
-  getPopularMoviesData (page, popularMovies, totalPage) {
+  getPopularMoviesData (page, popularMovies) {
     this.httpService.getPopularMovies(page).subscribe(
       data => {
         this.totalPage = data['total_pages'];
@@ -45,17 +45,17 @@ export class PopularMovieComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getPopularMoviesData(this.page, this.popularMovies, this.totalPage);
+    this.getPopularMoviesData(this.page, this.popularMovies);
     $('#lessBtn').on('click', () => {
       if (this.page > 1) {
         this.page -= 1;
-        this.getPopularMoviesData(this.page, this.popularMovies = [], this.totalPage);
+        this.getPopularMoviesData(this.page, this.popularMovies = []);
       }
     });
     $('#greaterBtn').on('click', () => {
         if (this.page < this.totalPage) {
           this.page += 1;
-          this.getPopularMoviesData(this.page, this.popularMovies = [], this.totalPage);
+          this.getPopularMoviesData(this.page, this.popularMovies = []);
         }
     });
   }
